@@ -10,7 +10,7 @@ import {
   deletePagamento,
   Pagamento,
 } from '../../features/pagamentoSlice';
-import { fetchEmpenhos } from '../../features/empenhoSlice'; 
+import { fetchEmpenhos } from '../../features/empenhoSlice';
 import PagamentoForm from '@/components/pagamento/PagamentoForm';
 import PagamentoTable from '@/components/pagamento/PagamentoTable';
 import Link from 'next/link';
@@ -41,7 +41,7 @@ const PagamentoPage: React.FC = () => {
       }
       setEditingPagamento(null);
       setShowForm(false);
-      dispatch(fetchPagamentos()); 
+      dispatch(fetchPagamentos());
     } catch (err) {
       console.error('Failed to save pagamento:', err);
     }
@@ -51,7 +51,7 @@ const PagamentoPage: React.FC = () => {
     if (window.confirm('Tem certeza que deseja excluir este pagamento?')) {
       try {
         await dispatch(deletePagamento(id)).unwrap();
-        dispatch(fetchPagamentos()); 
+        dispatch(fetchPagamentos());
       } catch (err) {
         console.error('Failed to delete pagamento:', err);
       }
@@ -70,17 +70,18 @@ const PagamentoPage: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-gray-100 p-8 font-inter">
-      <header className="text-center mb-10">
-        <h1 className="text-4xl font-extrabold text-gray-900 mb-2">Gerenciador de Pagamentos</h1>
-        <p className="text-lg text-gray-600">
-          CRUD de pagamentos com Next.js, Redux Toolkit e Tailwind CSS
-        </p>
-        <nav className="mt-4 flex justify-center space-x-4"> 
-          <Link href="/" className="text-indigo-600 hover:text-indigo-800 font-medium">
-            Ir para Despesas
+      <header className="bg-indigo-700 text-white p-4 shadow-md flex justify-between items-center">
+        <h1 className="text-2xl font-bold">Gerenciador de Pagamentos</h1>
+        <nav className="flex gap-x-4">
+          <Link href="/" passHref>
+            <button className="px-5 py-2 rounded-lg bg-white text-indigo-700 hover:bg-indigo-100 focus:outline-none focus:ring-2 focus:ring-indigo-300 focus:ring-opacity-75 transition-all duration-200 font-semibold shadow-sm">
+              Ir para Despesas
+            </button>
           </Link>
-          <Link href="/empenho" className="text-indigo-600 hover:text-indigo-800 font-medium">
-            Ir para Empenhos
+          <Link href="/empenho" passHref>
+            <button className="px-5 py-2 rounded-lg bg-white text-indigo-700 hover:bg-indigo-100 focus:outline-none focus:ring-2 focus:ring-indigo-300 focus:ring-opacity-75 transition-all duration-200 font-semibold shadow-sm">
+              Ir para Empenhos
+            </button>
           </Link>
         </nav>
       </header>

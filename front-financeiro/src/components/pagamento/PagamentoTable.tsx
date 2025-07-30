@@ -32,7 +32,6 @@ const PagamentoTable: React.FC<PagamentoTableProps> = ({ pagamentos, empenhos, o
 
   return (
     <div className="bg-white p-6 rounded-lg shadow-lg">
-      <h2 className="text-2xl font-bold mb-6 text-gray-800">Lista de Pagamentos</h2>
       {pagamentos.length === 0 ? (
         <p className="text-gray-600">Nenhum pagamento encontrado.</p>
       ) : (
