@@ -45,7 +45,7 @@ cd Financeiro
 ./mvnw spring-boot:run
 
 # 3. Rode o front-end (Next.js)
-cd front
+cd financeiro-app
 npm install
 npm run dev
 
