@@ -1,4 +1,4 @@
-'use client'; 
+'use client';
 
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
@@ -65,14 +65,18 @@ const Home: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-gray-100 p-8 font-inter">
-      <header className="text-center mb-10">
-        <h1 className="text-4xl font-extrabold text-gray-900 mb-2">Gerenciador de Despesas</h1>
-        <nav className="mt-4 flex justify-center space-x-4"> 
-          <Link href="/empenho" className="text-indigo-600 hover:text-indigo-800 font-medium">
-            Ir para Empenhos
+      <header className="bg-indigo-700 text-white p-4 shadow-md flex justify-between items-center">
+        <h1 className="text-2xl font-bold">Gerenciador de Despesas</h1>
+        <nav className="flex gap-x-4">
+          <Link href="/empenho" passHref>
+            <button className="px-5 py-2 rounded-lg bg-white text-indigo-700 hover:bg-indigo-100 focus:outline-none focus:ring-2 focus:ring-indigo-300 focus:ring-opacity-75 transition-all duration-200 font-semibold shadow-sm">
+              Ir para Empenhos
+            </button>
           </Link>
-          <Link href="/pagamento" className="text-indigo-600 hover:text-indigo-800 font-medium"> 
-            Ir para Pagamentos
+          <Link href="/pagamento" passHref>
+            <button className="px-5 py-2 rounded-lg bg-white text-indigo-700 hover:bg-indigo-100 focus:outline-none focus:ring-2 focus:ring-indigo-300 focus:ring-opacity-75 transition-all duration-200 font-semibold shadow-sm">
+              Ir para Pagamentos
+            </button>
           </Link>
         </nav>
       </header>
