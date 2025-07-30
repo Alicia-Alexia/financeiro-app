@@ -1,4 +1,4 @@
-'use client'; // Indica que este é um Client Component
+'use client'; 
 
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
@@ -67,6 +67,14 @@ const Home: React.FC = () => {
     <div className="min-h-screen bg-gray-100 p-8 font-inter">
       <header className="text-center mb-10">
         <h1 className="text-4xl font-extrabold text-gray-900 mb-2">Gerenciador de Despesas</h1>
+        <nav className="mt-4 flex justify-center space-x-4"> 
+          <Link href="/empenho" className="text-indigo-600 hover:text-indigo-800 font-medium">
+            Ir para Empenhos
+          </Link>
+          <Link href="/pagamento" className="text-indigo-600 hover:text-indigo-800 font-medium"> 
+            Ir para Pagamentos
+          </Link>
+        </nav>
       </header>
 
       <main className="max-w-6xl mx-auto">
